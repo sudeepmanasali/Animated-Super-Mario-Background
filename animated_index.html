@@ -1,0 +1,117 @@
+  <html>
+      <head>
+<title>mario</title>
+<style>
+    html, body{
+        height:100%;
+        width:100%;
+        overflow:hidden;
+        margin:0;
+    }
+
+    .grass, .sky,  .road{
+        position:relative;
+    }
+
+    .sky{
+        height:40%;
+        background-color:skyblue;
+    }
+
+    .grass{
+        height: 30%;
+        background-color:#59e00b;
+    }
+
+    .road{
+        height:30%;
+        background: dimgray;
+        box-sizing:border-box;
+        border-top:18px solid gray;
+        border-bottom:18px solid gray;
+        width: 100%;
+    }
+
+    .lines{
+        box-sizing:border-box;
+        border:5px dashed #fff;
+        height:9px;
+        width:100%;
+        position:absolute;
+        top: 45%;
+        
+    }
+    .mario{
+        position:absolute;
+        top: -80px;
+        left:8px;
+        animation-name:drive;
+        animation-duration: 4s;
+        /* animation-delay: 1s; */
+        animation-fill-mode: backwards;
+        /* forwards, both, backwards */
+        animation-iteration-count: infinite;
+        /* animation-direction:reverse; */
+        animation-timing-function:linear;
+    }
+
+   
+
+    .luigi{
+        position:absolute;
+        top: 80px;
+        left:0px;
+        animation-name:drive;
+        animation-duration: 5s;
+        
+        /* animation-delay: 1s; */
+        animation-fill-mode: both;
+        /* forwards, both, backwards */
+        animation-iteration-count: infinite;
+       
+    }
+
+    .cloud{
+        position:absolute;
+    }
+    .cloud:nth-child(1){
+        width: 200px;
+        top:120px;
+        opacity: 0.5;
+        animation:wind 60s linear infinite reverse;
+    }
+
+    .cloud:nth-child(2){
+        width:300px;
+        top:0;
+        
+        animation:wind 40s linear infinite reverse;
+    }
+   
+    @keyframes drive{
+         from{transform: translateX(-10px);}
+         to{transform: translateX(1000px);}
+    }
+
+    @keyframes wind{
+        from{left:-300px;}
+        to{left:100%;}
+    }
+</style>
+      </head>
+      <body>
+          
+          <div class="sky">
+            <img src="cloud.png" class="cloud" alt="no image">
+            <img src="cloud.png" class="cloud" alt="no image">
+         
+          </div>
+          <div class="grass"></div>
+          <div class="road">
+              <div class="lines"></div>
+         <img src="luigi.png" class="luigi" alt="no image">
+                  <img src="mario.png" class="mario" alt="no image">
+               </div>
+        
+      </body>
+  </html>
